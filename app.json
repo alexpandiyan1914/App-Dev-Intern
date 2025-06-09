@@ -12,6 +12,9 @@
       "supportsTablet": true
     },
     "android": {
+      "react-native-google-mobile-ads": {
+        "android_app_id": "ca-app-pub-9940591156853065~2074894729"
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
