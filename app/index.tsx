@@ -30,7 +30,7 @@ export default function HomeScreen() {
       <View style={styles.buttonContainer}>
         <Button title="Go to Profile" onPress={() => router.push('/profile')} />
         <View style={{ height: 10 }} />
-        <Button title="Go to Settings" onPress={() => alert("Coming soon! ⚙️")} />
+        <Button title="Go to Settings" onPress={() => router.push('/settings')} />
       </View>
     </View>
   );
