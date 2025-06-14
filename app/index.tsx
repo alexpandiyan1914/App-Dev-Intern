@@ -1,30 +1,38 @@
 import { useRouter } from 'expo-router';
+import React, { useEffect, useState } from 'react';
 import { Button, Image, StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
   const router = useRouter();
   const today = new Date().toDateString();
-  // const currentTime = new Date().toLocaleTimeString();
+  const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-      <View style={styles.container}>
-        <Text style={styles.title}>👋 Welcome Back!</Text>
-        <Text style={styles.date}>{today}</Text>
-        {/* <Text style={styles.time}>{currentTime}</Text> */}
+    <View style={styles.container}>
+      <Text style={styles.title}>👋 Welcome Back!</Text>
+      <Text style={styles.date}>{today}</Text>
+      <Text style={styles.time}>{currentTime}</Text>
 
-        <Image
-          source={require('../assets/images/user.jpg')}
-          style={styles.profilePic}
-        />
+      <Image
+        source={require('../assets/images/user.jpg')}
+        style={styles.profilePic}
+      />
 
-        <Text style={styles.name}>Alex Pandiyan</Text>
+      <Text style={styles.name}>Alex Pandiyan A</Text>
 
-        <View style={styles.buttonContainer}>
-          <Button title="Go to Profile" onPress={() => router.push('/profile')} />
-          <View style={{ height: 10 }} />
-          <Button title="Go to Settings" onPress={() => alert("Coming soon! ⚙️")} />
-        </View>       
+      <View style={styles.buttonContainer}>
+        <Button title="Go to Profile" onPress={() => router.push('/profile')} />
+        <View style={{ height: 10 }} />
+        <Button title="Go to Settings" onPress={() => alert("Coming soon! ⚙️")} />
       </View>
+    </View>
   );
 }
 
