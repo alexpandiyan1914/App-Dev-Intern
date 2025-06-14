@@ -1,4 +1,3 @@
-import { AdMobBanner } from 'expo-ads-admob';
 import { useRouter } from 'expo-router';
 import { Button, Image, StyleSheet, Text, View } from 'react-native';
 
@@ -9,11 +8,6 @@ export default function HomeScreen() {
 
   return (
       <View style={styles.container}>
-      <AdMobBanner
-          bannerSize="fullBanner"
-          adUnitID="ca-app-pub-9940591156853065/2655061804"
-          servePersonalizedAds={true}
-        />
         <Text style={styles.title}>👋 Welcome Back!</Text>
         <Text style={styles.date}>{today}</Text>
         {/* <Text style={styles.time}>{currentTime}</Text> */}
