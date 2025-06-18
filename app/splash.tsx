@@ -7,7 +7,6 @@ export default function SplashScreen() {
   const spinAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
-    // Infinite rotation animation
     Animated.loop(
       Animated.timing(spinAnim, {
         toValue: 1,
@@ -17,7 +16,6 @@ export default function SplashScreen() {
       })
     ).start();
 
-    // Navigate after 5 seconds
     const timer = setTimeout(() => {
       router.replace('/');
     }, 5000);
